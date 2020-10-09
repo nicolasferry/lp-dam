@@ -1,0 +1,2 @@
+include ':fiware-java-client'
+rootProject.name = "LPDAM"
