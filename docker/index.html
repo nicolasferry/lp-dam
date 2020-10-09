@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr" >
+<head>
+    <meta charset="utf-8" />
+    <title>Health Management</title>
+</head>
+<body>
+    <h1>Follow patient</h1>
+    <h2>Select patient:</h2>
+    <div id="Main">
+        <select id="PatientList"></select>
+        <button id="submit">Submit</button>
+        <table id="reports">
+
+        </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $( document ).ready(function(){
+        $.getJSON("/quantumleap/v2/entities", null, function(data) {
+            $("#PatientList option").remove(); // Remove all <option> child tags.
+            $.each(data, function(index, item) { // Iterates through a collection
+                $("#PatientList").append( // Append an object to the inside of the select box
+                    $("<option></option>") // Yes you can do this.
+                        .text(item.id)
+                        .val(item.id)
+                );
+            });
+        });
+    });
+
+    $("#submit").click(function() {
+        var value = $("#PatientList option:selected");
+        $.getJSON("/quantumleap/v2/entities/"+value.text(), null, function(data) {
+            for (var i = 0; i < data.index.length; i++) {
+                $("#reports").append(
+                    $("<tr></tr>").append(
+                        $("<td></td>").text(data.index[i]),
+                        $("<td></td>").text(JSON.stringify(data.attributes[0].values[i]))
+                    )
+                );
+            }
+        });
+    });
+    </script>
+</body>
+</html>
