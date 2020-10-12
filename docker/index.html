@@ -18,7 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
     $( document ).ready(function(){
-        $.getJSON("/quantumleap/v2/entities", null, function(data) {
+        $.getJSON("http://127.0.0.1/quantumleap/v2/entities", null, function(data) {
             $("#PatientList option").remove(); // Remove all <option> child tags.
             $.each(data, function(index, item) { // Iterates through a collection
                 $("#PatientList").append( // Append an object to the inside of the select box
@@ -32,7 +32,7 @@
 
     $("#submit").click(function() {
         var value = $("#PatientList option:selected");
-        $.getJSON("/quantumleap/v2/entities/"+value.text(), null, function(data) {
+        $.getJSON("http://127.0.0.1/quantumleap/v2/entities/"+value.text(), null, function(data) {
             for (var i = 0; i < data.index.length; i++) {
                 $("#reports").append(
                     $("<tr></tr>").append(

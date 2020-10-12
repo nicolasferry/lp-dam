@@ -55,6 +55,15 @@ services:
     volumes:
       - crate-db:/data
 
+  reverse:
+    image: nicolasferry/reverse
+    hostname: reverse
+    container_name: reverse
+    ports:
+      - "80:80"
+    depends_on:
+      - quantumleap
+
 volumes:
   mongo-db: ~
   crate-db: ~
