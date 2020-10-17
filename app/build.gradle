@@ -3,6 +3,12 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
 
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
     defaultConfig {
         applicationId "com.example.lpdam"
         minSdkVersion 21
@@ -29,6 +35,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.1.0'
     implementation 'androidx.navigation:navigation-ui:2.1.0'
     testImplementation 'junit:junit:4.12'
+    testImplementation "org.robolectric:robolectric:4.2"
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(":fiware-java-client")
