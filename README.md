@@ -5,11 +5,11 @@ Ce depôt contient toutes les ressources pour bien démarrer votre projet.
 ## Content
 
 En particulier il contient:
-* Un squelette de l'application Android pour pousser les formulaires et les données des capteurs du smartphone. Il vous est fourni pour l'exemple le code pour l'acqusition des données géolocalisation ainsi que le code pour pousser ces données vers FIWARE.
+* Un squelette de l'application Android pour pousser les formulaires et les données des capteurs du smartphone. Il vous est fourni pour l'exemple le code pour l'acqusition des données de géolocalisation ainsi que le code pour pousser ces données vers FIWARE.
 
 * La description swagger de l'API de FIWARE Orion.
 
-* Un fichier docker compose ainsi qu'un script start.sh pour lancer la partie serveur (i.E., FIWARE, etc.)
+* Un fichier docker compose ainsi qu'un script start.sh pour lancer la partie serveur (i.e., FIWARE, etc.)
 
 * Une page HTML simple comme exemple d'UI pour les utilisateurs de notre solution (i.e., nurse, doctor, next of kin, etc.)
 
