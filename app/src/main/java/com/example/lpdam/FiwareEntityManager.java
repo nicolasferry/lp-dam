@@ -9,13 +9,13 @@ import org.json.JSONException;
 import java.util.List;
 import java.util.Map;
 
-import io.swagger.client.ApiCallback;
-import io.swagger.client.ApiClient;
-import io.swagger.client.ApiException;
-import io.swagger.client.Configuration;
-import io.swagger.client.api.EntitiesApi;
-import io.swagger.client.model.CreateEntityRequest;
-import io.swagger.client.model.UpdateOrAppendEntityAttributesRequest;
+//import io.swagger.client.ApiCallback;
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.api.EntitiesApi;
+//import io.swagger.client.model.CreateEntityRequest;
+//import io.swagger.client.model.UpdateOrAppendEntityAttributesRequest;
 
 /**
  * This class offers the necessary support for publishing our data to FIWARE.
@@ -23,7 +23,7 @@ import io.swagger.client.model.UpdateOrAppendEntityAttributesRequest;
 
 public class FiwareEntityManager {
 
-    private ApiClient apiClient;
+    //private ApiClient apiClient;
 
     /**
      * Initialier the manager with the endpoint to communicate with FIWARE
@@ -31,8 +31,8 @@ public class FiwareEntityManager {
      */
     public FiwareEntityManager(String path){
         // We configure the endpoint to communicate with FIWARE
-        this.apiClient= Configuration.getDefaultApiClient();
-        apiClient.setBasePath(path); //"http://192.168.1.28:1026"
+        //this.apiClient= Configuration.getDefaultApiClient();
+        //apiClient.setBasePath(path); //"http://192.168.1.28:1026"
     }
 
 
@@ -44,7 +44,7 @@ public class FiwareEntityManager {
      * @param latitude - This can be changed later :)
      */
     public void addOrUpdateAttributes(String id, String type, String longitude, String latitude){
-        EntitiesApi ea = new EntitiesApi();
+        /*EntitiesApi ea = new EntitiesApi();
         UpdateOrAppendEntityAttributesRequest r = new UpdateOrAppendEntityAttributesRequest();
         Gson gson = new Gson();
         String s = "{\n" +
@@ -81,7 +81,8 @@ public class FiwareEntityManager {
             });
         } catch (ApiException e) {
             e.printStackTrace();
-        }
+        }*/
+	Log.v("LPDAM", "Not yet implemented ");
 
 
     }
@@ -93,7 +94,7 @@ public class FiwareEntityManager {
      * @throws JSONException
      */
     public void registerEntity(String id, String type) throws JSONException {
-        EntitiesApi ea = new EntitiesApi();
+        /*EntitiesApi ea = new EntitiesApi();
         CreateEntityRequest c = new CreateEntityRequest();
         c.setId(id);
         c.setType(type);
@@ -126,7 +127,8 @@ public class FiwareEntityManager {
             });
         } catch (ApiException e) {
             e.printStackTrace();
-        }
+        }*/
+	Log.v("LPDAM", "Not yet implemented ");
     }
 
 }
